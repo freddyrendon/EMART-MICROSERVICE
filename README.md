@@ -1,23 +1,37 @@
 # EMART-MICROSERVICE
 
-# Must have Vagrant Installed
+## Prerequisites
+- Vagrant must be installed.
 
-# Clone source code of EMART_MICROSERVICE App
+## Setup
+
+### 1. Clone the source code of EMART_MICROSERVICE App:
+```bash 
 git clone https://github.com/freddyrendon/EMART-MICROSERVICE.git
 ls
 cd EMART-MICROSERVICE
-
-# Bring up the containers from docker-compose file
+```
+### 2. Bring up the containers from the docker-compose file:
+```
+Copy code
 docker compose up -d
 docker compose ps
 docker ps -a
 ip addr show
+```
+### 3. Access the Application:
+Open your browser and navigate to:
+```http://VM-Ip:80```
 
-# Go to browser enter http://VM-Ip:80
+### 4. Cleanup
+To delete and clean up, use the following commands:
 
-# Delete 
+```bash
+
 docker compose down
 docker system prune -a
 exit
 vagrant halt
-vagrant destroy 
+vagrant destroy
+
+```
