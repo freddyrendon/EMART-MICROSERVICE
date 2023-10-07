@@ -7,7 +7,8 @@ services:
             - "4200:4200"
         container_name: client
         depends_on:
-            [api, webapi]
+            - api 
+            - webapi
 
     api:
         build:
@@ -17,8 +18,7 @@ services:
         container_name: api
         depends_on:
             - nginx
-        depends_on:
-            [emongo]
+            - emongo
 
     webapi:
         build:
@@ -28,7 +28,7 @@ services:
         restart: always
         container_name: webapi
         depends_on:
-            [emartdb]
+            - emartdb
 
     nginx:
         restart: always
@@ -40,7 +40,7 @@ services:
             - "80:80"
         command: ['nginx-debug', '-g', 'daemon off;']
         depends_on:
-            [client]
+            - client
 
     emongo:
        image: mongo:4
