@@ -13,7 +13,6 @@ cd EMART-MICROSERVICE
 ```
 ### 2. Bring up the containers from the docker-compose file:
 ```
-Copy code
 docker compose up -d
 docker compose ps
 docker ps -a
